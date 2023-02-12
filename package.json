@@ -4,14 +4,15 @@
   "description": "Live URL: ???",
   "main": "server/server.js",
   "engines": {
-    "node": "19.0.1"
+    "node": "19.6.0"
   },
   "scripts": {
-    "start": "node server/server.js --ignore client",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "start": "if-env NODE_ENV=production && NODE_OPTIONS=--openssl-legacy-provider && npm run start:prod || NODE_OPTIONS=--openssl-legacy-provider && npm run start:dev",
+    "develop": "concurrently \"cd server && npm run watch\" \"NODE_OPTIONS=--openssl-legacy-provider && cd client && npm start\"",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "\"Rochak & Gina\"",
   "license": "ISC",

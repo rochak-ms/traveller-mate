@@ -1,6 +1,6 @@
 # Traveller Mate
 
-Live URL: ???
+Live URL: https://traveller-mate.herokuapp.com/
 
 ![Screenshot](./client/public/images/Landing-Page.png)
 ![Screenshot](./client/public/images/Preview2.png)
