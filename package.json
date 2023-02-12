@@ -7,12 +7,11 @@
     "node": "16.18.1"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "node server/server.js --ignore client",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "start:prod": "cd server && npm start",
-    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "author": "\"Rochak & Gina\"",
   "license": "ISC",
