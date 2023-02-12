@@ -4,7 +4,7 @@
   "description": "Live URL: ???",
   "main": "server/server.js",
   "engines": {
-    "node": "16.18.1"
+    "node": "19.0.1"
   },
   "scripts": {
     "start": "node server/server.js --ignore client",
