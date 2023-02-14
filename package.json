@@ -11,7 +11,8 @@
     "develop": "concurrently \"cd server && npm run watch\" \"NODE_OPTIONS=--openssl-legacy-provider && cd client && npm start\"",
     "start:prod": "cd server && npm start",
     "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i"
+    "install": "cd server && npm i && cd ../client && npm i",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && cd client && npm install && npm run build"
   },
   "author": "\"Rochak & Gina\"",
   "license": "ISC",
